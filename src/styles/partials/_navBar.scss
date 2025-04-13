@@ -1,0 +1,142 @@
+.navbar{
+    height: 55px;
+    box-shadow: 0px 3px 6px var(--shadow-color) ;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;  //gave the body a padding top before giving this navbar this because it was covering the texts
+    z-index:998 ;
+       .logo{
+          font-size: 1.5em;
+          font-weight: bolder;
+          color: var(--primary-color);
+          span{
+            color: var(--text-color);
+          }
+       }
+       .nav-links{
+           a{
+                margin-left: 1em;
+                color: var(--text-light);
+                 letter-spacing: 1px;
+                 position: relative;
+                 text-transform: uppercase;
+                 font-size: .9rem;
+                 &::before{
+                    content: '';
+                     display: inline-block;
+                     height: 4px;
+                     width: 100%;
+                    background-color:var(--primary-color) ;
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    transform:scaleX(0) ;
+                    transition: getAnimationDuration(.6s) ease-in-out; //same effect with the transformation below
+                    // transition:0.6s;
+
+                 }
+                 &:hover{
+                    &::before{
+                        transform: scaleX(1);
+                    }
+                 }
+                 &.active{
+                    color: var(--primary-color);
+                    font-weight: bold;
+                 }
+           }
+       }
+
+       .sidebar-btn{
+        height: 28px;
+        width: 30px;
+        // background-color: red;
+        position: relative;
+        display: none;
+            .bar{
+                border-radius: 5px;
+                height: 6px;
+                width: 100%;
+                background-color: var(--text-color);
+                position: absolute;
+                transition: transform getAnimationDuration(.6s) ;
+                &:nth-child(1){
+                    top: 0;
+                }
+                &:nth-child(2){
+                    top: 50%;
+                    transform-origin: right;
+                    transform:scaleX(0.7) translateY(-50%);
+                }
+                &:nth-child(3){
+                    top: 100%;
+                    transform: scale(1.1) translateY(-100%);
+                }
+            }
+            &.active{
+                .bar{
+                    transform: origin;
+                    top: 50%;
+                    &:nth-child(1){
+                         transform: translate(0, -50%) scale(1) rotate(45deg) ;
+                    }
+                    &:nth-child(2){
+                        transform: scaleX(0) translateY(-50%);
+                   }
+                    &:nth-child(3){
+                        transform: translate(0, -50%) scale(1) rotate(-45deg) ;
+                   }
+                   
+                }
+            }
+       }
+}
+
+.sidebar{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    z-index:999 ;
+
+    background-color: var(--background-color);
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.2),
+               3px 0 5px var(--shadow-color) ;
+    animation: getAnimationDuration(.6s) slideInLeft;
+    .sidebar-link{
+        display: block;
+        padding: .4em 1em;
+        border-left: .5em solid transparent;
+        margin-bottom: 1em;
+        color: var(--text-color);
+        font-size: 1.1em;
+        transform: translateX(-100%); //remove this and the forwards attribute below to see what will happen. 
+        animation: getAnimationDuration(.4s) slideInLeft forwards;
+        @for $i from 1 through 3{
+              &:nth-child(#{$i}){
+                animation-delay: #{$i * .1}s;
+              }
+        }      //this forloop makes the sidebar links to come out one after the other
+
+
+        &.active{
+             border-left-color: var(--primary-color);
+        }
+        &:hover{
+            border-left-color: var(--primary-color);
+            background-color: rgba(0,0,0,0.5) ;
+            transition: 0.4s;
+        }
+         svg{
+            width: 2.2em;
+            margin-right: .4em;
+         }
+
+        }
+}
