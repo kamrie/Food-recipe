@@ -42,10 +42,10 @@ export default function Navbar(){
     return(
       <> 
          <div className="navbar container">
-            <a href="#" className="logo">  K<span>am</span>dra foods</a>
+            <Link to={"/"} className="logo">  K<span>am</span>dra foods</Link>
             <div className="nav-links">
               {links.map(link => (
-                 <Link to={link.path} className={location.pathname == link.path ? "nav-links active" : "sidebar-link"}  key={link.name}>{link.name}</Link> 
+                 <Link to={link.path} className={location.pathname === link.path ? "nav-links active" : "sidebar-link"}  key={link.name}>{link.name}</Link> 
               ))}
                   {/* <a href="#" >Home</a>
                     <a href="#">Recipes</a>
