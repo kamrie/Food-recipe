@@ -6,36 +6,6 @@ import RecipeCard from '../components/RecipeCard'
 
 export default function Recipes() {
 
-  // const chefs = [
-  //   {
-  //     title: "Juan Carlos" ,
-  //     img: "/img/top-chefs/3 lady.jpg" ,
-  //     recipesCount: "10" ,
-    
-  //   },
-  //   {
-  //     title: "Jon Doe",
-  //     img: "/img/top-chefs/1 lady.jpg", 
-  //     recipesCount: "06",
-    
-  //   },
-  //   {
-  //     title: "Erich Maria" ,
-  //     img: "/img/top-chefs/2 lady.jpg" ,
-  //     recipesCount: "13" ,
-    
-  //   },
-  //   {
-  //     title: "Chris Brown",
-  //     img: "/img/top-chefs/2 male.jpg",
-  //     recipesCount: "09",
-  //       },
-  //   {
-  //     title: "Ben 10",
-  //     img: "/img/top-chefs/3 male.jpg",
-  //     recipesCount: "12",
-  //      },
-  // ]
 
   
   const recipes = [
