@@ -10,8 +10,8 @@ export default function Recipes() {
   
   const recipes = [
     {
-      title: "Spaghetti and Meatballs" ,
-    image: "/img/gallery/curry.jpg" ,
+      title: "Macncheese and Meatballs" ,
+    image: "/img/gallery/macncheese.jpg" ,
       authorImg: "/img/top-chefs/3 lady.jpg" ,
       
     
@@ -35,10 +35,21 @@ export default function Recipes() {
       authorImg: "/img/top-chefs/2 male.jpg",
    },
     {
-      title: "Japanese Sushi",
+      title: "Tomato salad",
           image: "/img/gallery/tomato-salad.jpg" ,
       authorImg: "/img/top-chefs/3 male.jpg",
      },
+    {
+      title: "Japanese schnitzel",
+          image: "/img/gallery/schnitzel.jpg" ,
+      authorImg: "/img/top-chefs/4 male.jpg",
+     },
+    {
+      title: "Dumplings",
+          image: "/img/gallery/dumplings.jpg" ,
+      authorImg: "/img/top-chefs/5 male.jpg",
+     },
+    
   ].sort(() => Math.random() * 0.5) //its shuffling our array
 
 
